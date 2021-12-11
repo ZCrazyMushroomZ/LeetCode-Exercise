@@ -1,1 +1,16 @@
 
+package LeetCode;
+
+import java.util.HashSet;
+//找出数组中重复的数字。（如果有重复的数字，则返回数字）
+public class Exercise01 {
+	public int findPepeatNumber(int[] arr) {
+		HashSet<Integer> set = new HashSet<>();
+		for(int num : arr) {
+			if(!set.add(arr[num])) {//hashSet 只能添加不同的元素。
+				return num;
+			}
+		}
+		return -1;
+	}
+}
